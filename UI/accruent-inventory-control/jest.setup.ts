@@ -1,0 +1,7 @@
+import '@testing-library/jest-dom';
+import { jest } from '@jest/globals';
+
+// Suppress console.log and console.error during tests
+jest.spyOn(console, 'log').mockImplementation(() => {});
+jest.spyOn(console, 'error').mockImplementation(() => {});
+jest.spyOn(console, 'warn').mockImplementation(() => {});

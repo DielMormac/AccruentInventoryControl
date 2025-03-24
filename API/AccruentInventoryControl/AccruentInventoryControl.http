@@ -1,0 +1,6 @@
+@AccruentInventoryControl_HostAddress = https://localhost:5116
+
+GET {{AccruentInventoryControl_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

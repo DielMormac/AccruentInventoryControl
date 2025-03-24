@@ -1,0 +1,40 @@
+.report-table {
+  margin-top: 20px;
+}
+
+.report-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+
+  &.no-transactions {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #8b8b8b;
+  }
+}
+
+.report-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.outbound {
+  color: rgb(122, 5, 5);
+}
+
+.inbound {
+  color: rgb(0, 156, 78);
+}

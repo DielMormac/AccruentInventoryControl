@@ -1,0 +1,35 @@
+.navbar-item-button {
+  padding: 0.5rem 8rem;
+  border: none;
+  background-color: #f0f0f0;
+  color: #213547;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+
+  &.Warehouse {
+    border-radius: 0.5rem 0rem 0rem 0rem;
+  }
+
+  &.Report {
+    border-radius: 0rem 0.5rem 0rem 0rem;
+  }
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &.active {
+    background-color: #001c71;
+    color: white;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+.tab-content {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
