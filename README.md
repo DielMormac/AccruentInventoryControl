@@ -4,19 +4,21 @@ Accruent Inventory Control (ACR-InControl) A project to deliver the Exercise for
 ## Accruent Inventory Control
 This project consists of two main components:
 
-API: A backend service built with .NET.
-UI: A frontend application built with React.
+**API:** A backend service built with .NET.
+
+**UI:** A frontend application built with React.
+
 This document provides instructions for setting up the environment and running both the API and UI.
 
 ### Prerequisites
 Before you begin, ensure you have the following installed on your system:
 
 ### For the API
-.NET SDK (version 8.0)
-SQL Server (if required for database setup)
+.NET SDK (version 8.0): https://dotnet.microsoft.com/pt-br/download/dotnet/8.0
 
 ### For the UI
-Node.js (version 16.x or later)
+Node.js (version 16.x or later): https://nodejs.org/pt
+
 npm (comes with Node.js)
 
 ## Setup Instructions
@@ -24,37 +26,64 @@ npm (comes with Node.js)
 ### Step 1: Clone the Repository
 Clone the repository to your local machine:
 
+`git clone https://github.com/DielMormac/AccruentInventoryControl.git`
+
 ### Step 2: Configure the API
+
 Navigate to the API directory:
-cd API/AccruentInventoryControl
+
+`cd API/AccruentInventoryControl`
 
 Restore dependencies:
-dotnet restore
+
+`dotnet restore`
 
 Run the API:
-dotnet run
 
-The API will start on http://localhost:5116 by default (if you prefer another port you can specify it in launchSettings.json).
+`dotnet run`
+
+The API will start on `http://localhost:5116` by default (if you prefer another port you can specify it in launchSettings.json).
 
 ### Step 3: Configure the UI
+
 Navigate to the UI directory:
-cd UI/accruent-inventory-control
 
-### Install dependencies:
-npm install
+`cd UI/accruent-inventory-control`
 
-### Create a .env file in the accruent-inventory-control directory:
-touch .env
+### Step 4: Install dependencies:
 
-##Add the following environment variables to the .env file:
-REACT_APP_API_BASE_URL=http://localhost:5000/api/v1
+`npm install`
 
-### Start the UI:
-npm start
+### Step 5: Start the UI:
 
-The UI will start on http://localhost:5174/.
+`npm run dev`
+
+The UI will start on `http://localhost:5174/`
+
+### Step 6 (optional): Running via `startup.ps1`
+
+Once you have all the dependencies installed in your environment, you can opt for starting the project via script.
+
+Navigate to the UI directory:
+
+`cd UI/accruent-inventory-control`
+
+Type:
+
+`.\startup.ps1`
+
+Press `Enter`
+
+This file will open two `terminal` one for the API and other for the UI.
+
+Open your browser and navigate to: 
+
+**UI:** [http://localhost:5174/](http://localhost:5173/)
+
+**API (Documentation):** [http://localhost:5174/](http://localhost:5116/swagger/index.html)
 
 ### Testing the Setup
+
 Open your browser and navigate to the UI:
 
 Ensure the UI is able to communicate with the API by performing actions that require API calls (e.g., fetching products, submitting transactions).
@@ -63,19 +92,19 @@ Ensure the UI is able to communicate with the API by performing actions that req
 
 ## API Fails to Start:
 
-The database will be running InMemory, it doest required any database setup.
+- Verify that you have the 8.0 installed
+  - open your cmd and type:
+    >`dotnet --list-sdks`
+    >
+    >`dotnet --list-runtimes`
 
 ## UI Fails to Start:
-
-Ensure the REACT_APP_API_BASE_URL in the .env file points to the correct API URL.
 Verify that Node.js and npm are installed.
-CORS Issues:
 
+## CORS Issues:
 If you encounter CORS errors, ensure the API allows requests from http://localhost:5174/. Update the CORS policy in the API if necessary.
 
 ## Folder Structure
-To format your `.md` file to look like the structure you provided, you can use Markdown's code block syntax. Here's how you can do it:
-
 ```markdown
 AccruentInventoryControl/
  ├── API/
