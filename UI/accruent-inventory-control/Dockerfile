@@ -8,7 +8,7 @@ RUN npm install
 
 # Copy the rest of the application files and build the app
 COPY . .
-RUN npm run build
+RUN npm run dev
 
 # Use a lightweight web server to serve the built files
 FROM nginx:alpine

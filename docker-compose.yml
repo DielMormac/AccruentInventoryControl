@@ -3,7 +3,7 @@ version: "3.8"
 services:
   api:
     build:
-      context: ./API/AccruentInventoryControl
+      context: ./API
       dockerfile: Dockerfile
     ports:
       - "5116:5116"
@@ -15,7 +15,7 @@ services:
       context: ./UI/accruent-inventory-control
       dockerfile: Dockerfile
     ports:
-      - "5173:80"
+      - "5173:5173"
     environment:
       - REACT_APP_API_BASE_URL=http://localhost:5116/api/v1
     depends_on:

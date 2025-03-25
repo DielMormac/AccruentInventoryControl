@@ -82,6 +82,12 @@ Open your browser and navigate to:
 
 **API (Documentation):** [http://localhost:5174/](http://localhost:5116/swagger/index.html)
 
+### Step 6 (optional): Running via docker
+
+Navigate to the UI root directory:
+
+execute `docker compose up --build`
+
 ### Testing the Setup
 
 Open your browser and navigate to the UI:
