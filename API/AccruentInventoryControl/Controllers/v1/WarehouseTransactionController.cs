@@ -4,6 +4,7 @@ using AccruentInventoryControl.Domain.ApiModels.Response;
 using AccruentInventoryControl.Domain.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace AccruentInventoryControl.API.Controllers.v1
 {

@@ -1,5 +1,6 @@
 using AccruentInventoryControl.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace AccruentInventoryControl.API.Controllers.v1
 {
