@@ -35,17 +35,16 @@ jobs:
           npm install
           npm test
 
-      - name: Build Docker images for API and UI
+      - name: Build Docker images for API
         run: |
           # Build API Docker image
           cd API
           docker build -t ghcr.io/dielmormac/inventory-control-api:latest .
-          cd ..
-          ls
 
+      - name: Build Docker images for UI
+        run: |
           # Build UI Docker image
           cd UI
-          ls
           docker build -t ghcr.io/dielmormac/inventory-control-ui:latest .
 
       - name: Push Docker images to GitHub Container Registry
