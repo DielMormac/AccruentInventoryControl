@@ -42,7 +42,7 @@ jobs:
           docker build -t ghcr.io/dielmormac/inventory-control-api:latest .
 
           # Build UI Docker image
-          cd UI
+          cd ../UI
           docker build -t ghcr.io/dielmormac/inventory-control-ui:latest .
 
       - name: Push Docker images to GitHub Container Registry
