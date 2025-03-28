@@ -39,12 +39,12 @@ jobs:
         run: |
           # Build API Docker image
           cd API
-          docker build -t ghcr.io/${{ github.repository_owner }}/inventory-control-api:latest .
+          docker build -t ghcr.io/dielmormac/inventory-control-api:latest .
           cd ..
 
           # Build UI Docker image
           cd UI
-          docker build -t ghcr.io/${{ github.repository_owner }}/inventory-control-ui:latest .
+          docker build -t ghcr.io/dielmormac/inventory-control-ui:latest .
           cd ..
 
       - name: Push Docker images to GitHub Container Registry
@@ -52,8 +52,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/inventory-control-api:latest
-            ghcr.io/${ github.repository_owner }}/inventory-control-ui:latest
+            ghcr.io/dielmormac/inventory-control-api:latest
+            ghcr.io/dielmormac/inventory-control-ui:latest
 
   deploy:
     runs-on: ubuntu-latest
