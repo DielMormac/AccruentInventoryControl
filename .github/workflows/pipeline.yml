@@ -35,25 +35,21 @@ jobs:
           npm install
           npm test
 
-      - name: Build Docker images for API
-        run: |
-          # Build API Docker image
-          cd API
-          docker build -t ghcr.io/dielmormac/inventory-control-api:latest .
-
-      - name: Build Docker images for UI
-        run: |
-          # Build UI Docker image
-          cd UI/accruent-inventory-control
-          docker build -t ghcr.io/dielmormac/inventory-control-ui:latest .
-
-      - name: Push Docker images to GitHub Container Registry
+      - name: Build and push API Docker image
         uses: docker/build-push-action@v2
         with:
+          context: ./API
+          file: ./API/Dockerfile
           push: true
-          tags: |
-            ghcr.io/dielmormac/inventory-control-api:latest
-            ghcr.io/dielmormac/inventory-control-ui:latest
+          tags: ghcr.io/dielmormac/inventory-control-api:latest
+
+      - name: Build and push UI Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./UI/accruent-inventory-control
+          file: ./UI/accruent-inventory-control/Dockerfile
+          push: true
+          tags: ghcr.io/dielmormac/inventory-control-ui:latest
 
   deploy:
     runs-on: ubuntu-latest
