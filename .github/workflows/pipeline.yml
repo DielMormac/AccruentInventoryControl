@@ -31,7 +31,7 @@ jobs:
 
     - name: Install dependencies and run tests for UI
       run: |
-        cd UI
+        cd UI/accruent-inventory-control
         npm install
         npm test
 
