@@ -40,12 +40,10 @@ jobs:
           # Build API Docker image
           cd API
           docker build -t ghcr.io/dielmormac/inventory-control-api:latest .
-          cd ..
 
           # Build UI Docker image
           cd UI
           docker build -t ghcr.io/dielmormac/inventory-control-ui:latest .
-          cd ..
 
       - name: Push Docker images to GitHub Container Registry
         uses: docker/build-push-action@v2
