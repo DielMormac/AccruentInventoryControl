@@ -23,6 +23,9 @@ COPY --from=build /out .
 
 # Expose the port the application runs on
 EXPOSE 80
+EXPOSE 8080
+EXPOSE 443
+EXPOSE 5116
 
 # Set the entry point for the container
 ENTRYPOINT ["dotnet", "AccruentInventoryControlAPI.dll", "--environment", "Development"]

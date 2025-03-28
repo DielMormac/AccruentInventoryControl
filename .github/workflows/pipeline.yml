@@ -1,0 +1,66 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies and run tests for API
+      run: |
+        cd API
+        dotnet restore
+        dotnet test
+
+    - name: Install dependencies and run tests for UI
+      run: |
+        cd UI
+        npm install
+        npm test
+
+    - name: Build Docker image
+      run: |
+        docker build -t inventory-control:latest .
+
+    - name: Push Docker image to GitHub Container Registry
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: ghcr.io/${{ github.repository_owner }}/inventory-control:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy to Azure App Service
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'inventory-control'
+        publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+        package: './'
