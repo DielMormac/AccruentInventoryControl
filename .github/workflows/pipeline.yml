@@ -36,13 +36,20 @@ jobs:
           npm install
           npm test
 
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build and push API Docker image
         uses: docker/build-push-action@v2
         with:
           context: ./API
           file: ./API/Dockerfile
           push: true
-          tags: ghcr.io/dielmormac/inventory-control-api:latest
+          tags: ghcr.io/${{ github.repository_owner }}/inventory-control-api:latest
 
       - name: Build and push UI Docker image
         uses: docker/build-push-action@v2
@@ -50,7 +57,7 @@ jobs:
           context: ./UI/accruent-inventory-control
           file: ./UI/accruent-inventory-control/Dockerfile
           push: true
-          tags: ghcr.io/dielmormac/inventory-control-ui:latest
+          tags: ghcr.io/${{ github.repository_owner }}/inventory-control-ui:latest
 
   deploy:
     runs-on: ubuntu-latest
