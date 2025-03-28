@@ -37,7 +37,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t inventory-control:latest .
+        docker compose up --build inventory-control:latest .
 
     - name: Push Docker image to GitHub Container Registry
       uses: docker/build-push-action@v2
