@@ -1,5 +1,5 @@
-# [Back to Index](./Documents/Index.md)
+# [Back to Index](../Index.md)
 
 # Terraform Flow
 
-![Terraform Flow](./Diagrams/4-TerraformFlow.png)
+![Terraform Flow](../Diagrams/TerraformFlow.png)

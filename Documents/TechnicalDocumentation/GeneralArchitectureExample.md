@@ -1,5 +1,5 @@
-# [Back to Index](./Documents/Index.md)
+# [Back to Index](../Index.md)
 
 # General Architecture Example
 
-![General Architecture Example](./Diagrams/2-GeneralArchitectureExample.png)
+![General Architecture Example](../Diagrams/GeneralArchitectureExample.png)

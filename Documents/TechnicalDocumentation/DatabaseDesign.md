@@ -1,8 +1,8 @@
-# [Back to Index](./Documents/Index.md)
+# [Back to Index](../Index.md)
 
 # Database Design with SQL Types
 
-![Database Scheme](./Diagrams/3-DatabaseScheme.png)
+![Database Scheme](../Diagrams/DatabaseScheme.png)
 
 ## 1. Product Table
 This table represents products in the system.

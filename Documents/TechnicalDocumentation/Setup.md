@@ -1,4 +1,4 @@
-# [Back to Index](./Documents/Index.md)
+# [Back to Index](../Index.md)
 
 # Setup
 
@@ -103,13 +103,3 @@ Verify that Node.js and npm are installed.
 
 ## CORS Issues:
 If you encounter CORS errors, ensure the API allows requests from http://localhost:5174/. Update the CORS policy in the API if necessary.
-
-## Folder Structure
-```markdown
-AccruentInventoryControl/
- ├── API/
- │   └── AccruentInventoryControl/ # API project
- ├── UI/
- │   └── accruent-inventory-control/ # UI project
- └── startup.ps1 # Script to start both API and UI
-```
