@@ -1,3 +1,5 @@
+{% include "./Documents/Index.md" %}
+
 # Use of Artificial Intelligence (AI) Tools
 
 During the exercise, I used artificial intelligence (AI) tools such as:

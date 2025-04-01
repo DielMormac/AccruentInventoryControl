@@ -1,3 +1,5 @@
+{% include "./Documents/Index.md" %}
+
 # Setup
 
 This document provides instructions for setting up the environment and running both the API and UI.

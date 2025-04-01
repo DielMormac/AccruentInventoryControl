@@ -1,3 +1,5 @@
+{% include "./Documents/Index.md" %}
+
 # Principal Software Engineer Duties
 
 ## Team Mentorship

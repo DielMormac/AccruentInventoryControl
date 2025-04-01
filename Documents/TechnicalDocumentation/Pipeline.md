@@ -1,3 +1,5 @@
+{% include "./Documents/Index.md" %}
+
 # CI/CD Pipeline
 
 ## Description

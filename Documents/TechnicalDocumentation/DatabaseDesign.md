@@ -1,3 +1,5 @@
+{% include "./Documents/Index.md" %}
+
 # Database Design with SQL Types
 
 ![Database Scheme](./Diagrams/3-DatabaseScheme.png)

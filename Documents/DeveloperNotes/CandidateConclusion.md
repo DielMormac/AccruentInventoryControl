@@ -1,3 +1,5 @@
+{% include "./Documents/Index.md" %}
+
 # Conclusion on the Exercise
 
 I created this documentation to explain a bit about my understanding of the exercise and how I made my decisions based on the time and needs to be met.
