@@ -1,4 +1,4 @@
-{% include "./Documents/Index.md" %}
+# [Back to Index](./Documents/Index.md)
 
 # Setup
 
